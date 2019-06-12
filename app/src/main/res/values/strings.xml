@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Weather</string>
+
+    <string-array name="Country_array">
+        <item>Pune</item>
+        <item>Mumbai</item>
+        <item>Indore</item>
+        <item>Ahmedabad</item>
+        <item>Delhi</item>
+    </string-array>
+    <string name="dash"> -- </string>
+    <string name="Temp_Max"> Temp_Max:=</string>
+    <string name="Temp_Min"> Temp_Min:= </string>
+    <string name="Wind"> Wind:=</string>
+    <string name="Humidity">Humidity:=</string>
+    <string name="Pressure">Pressure:=</string>
+    <string name="Sunrise">Sunrise:=</string>
+    <string name="Sunset">Sunset:=</string>
+
+</resources>

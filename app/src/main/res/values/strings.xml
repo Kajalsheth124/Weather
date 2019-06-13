@@ -4,9 +4,19 @@
     <string-array name="Country_array">
         <item>Pune</item>
         <item>Mumbai</item>
-        <item>Indore</item>
-        <item>Ahmedabad</item>
+        <item>Jaipur</item>
+        <item>Raipur</item>
         <item>Delhi</item>
+        <item>Baroda</item>
+        <item>Chennai</item>
+        <item>Nandurbar</item>
+        <item>Nashik</item>
+        <item>Lonavala</item>
+        <item>Solapur</item>
+        <item>Nagpur</item>
+        <item>Shimla</item>
+        <item>Shrinagar</item>
+        <item>Jammu</item>
     </string-array>
     <string name="dash"> -- </string>
     <string name="Temp_Max"> Temp_Max:=</string>

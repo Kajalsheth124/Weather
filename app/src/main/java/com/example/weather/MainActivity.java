@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
     Date d = new Date();
     Spinner spin;
     String url = "http://api.openweathermap.org/data/2.5/weather?q=Pune&APPID=ea574594b9d36ab688642d5fbeab847e";
-    String[] city = {"Pune", "Mumbai", "Indore", "Ahemdabad", "Delhi","Vadadora",
-    "Nandurbar","Nashik","Lonavala","Solapur"
+    String[] city = {"Pune", "Mumbai", "Baroda", "Jaipur", "Delhi","Raipur",
+    "Nandurbar","Nashik","Lonavala","Solapur","Nagpur","Chennai","Shimla","Shrinagar","Jammu"
     };
 
 

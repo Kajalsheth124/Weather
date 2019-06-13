@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
     Date d = new Date();
     Spinner spin;
     String url = "http://api.openweathermap.org/data/2.5/weather?q=Pune&APPID=ea574594b9d36ab688642d5fbeab847e";
-    String[] city = {"Pune", "Mumbai", "Baroda", "Jaipur", "Delhi","Raipur",
-    "Nandurbar","Nashik","Lonavala","Solapur","Nagpur","Chennai","Shimla","Shrinagar","Jammu"
+    String[] city = {"Pune", "Mumbai", "Baroda", "Jaipur", "Delhi", "Raipur",
+            "Nandurbar", "Nashik", "Lonavala", "Solapur", "Nagpur", "Chennai", "Shimla", "Shrinagar", "Jammu"
     };
 
 
@@ -45,18 +45,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         getSupportActionBar().setTitle("Weather");
         spin = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item,city);
+                android.R.layout.simple_spinner_item, city);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(adapter);
         spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String City=city[position];
+                String City = city[position];
 
-                url = "http://api.openweathermap.org/data/2.5/weather?q="+ City +"&APPID=ea574594b9d36ab688642d5fbeab847e";
+                url = "http://api.openweathermap.org/data/2.5/weather?q=" + City + "&APPID=ea574594b9d36ab688642d5fbeab847e";
 
 
                 new YourAsyncTask(MainActivity.this).execute("Felix IT");
@@ -83,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
 
             String jsonStr = "";
             try {
-                // Making a request to url and getting response
 
                 HttpClient client = new DefaultHttpClient();
                 HttpGet request = new HttpGet();
@@ -95,15 +95,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG, "Exception: " + e.getMessage());
             }
 
-
-//            String str = args[0];
-//            // do background work here
-//            try {
-//                Thread.sleep(4000);
-//            } catch (InterruptedException e) {
-//                // TODO Auto-generated catch block
-//                e.printStackTrace();
-//            }
 
             return jsonStr;
 

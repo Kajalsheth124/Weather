@@ -1,6 +1,7 @@
 package com.example.weather;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.icu.text.SelectFormat;
 import android.icu.text.TimeZoneFormat;
 import android.os.AsyncTask;
@@ -8,11 +9,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TimeFormatException;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -63,11 +67,38 @@ public class MainActivity extends AppCompatActivity {
                 new YourAsyncTask(MainActivity.this).execute("Felix IT");
             }
 
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
+
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.bar_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+
+    }
+
+    public void onSettingsClick(MenuItem item) {
+        Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainActivity.this, Settings.class);
+        startActivity(intent);
 
     }
 
@@ -159,6 +190,8 @@ public class MainActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
+
         }
 
     }
